@@ -16,6 +16,7 @@ numbers[9] = 900;      //자스에서는 새로운 객체를 생성해서 10개�
 console.log(numbers[9]);
 
 
+
 let number = 1234;   //number는 이터러블 아니라 에러발생
 try {
     for (n of number) console.log(n);
