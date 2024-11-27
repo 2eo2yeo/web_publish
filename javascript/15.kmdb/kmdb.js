@@ -59,7 +59,7 @@ function searchMovieResult(type, value, title) { // value만 이름바꿔서 파
 
             if (count) {
                 let info = result.Data[0].Result[0];
-                let directors = result.Data[0].Result[0].directors.director;
+                // let directors = result.Data[0].Result[0].directors.director;
                 let actors = result.Data[0].Result[0].actors.actor;
                 let posterArray = result.Data[0].Result[0].posters.split("|");  //문자열이라 바로 split으로 변환이 가능, array는 불가능
                 let stillArray = result.Data[0].Result[0].stlls.split("|");
