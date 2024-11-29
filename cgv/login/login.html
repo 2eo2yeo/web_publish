@@ -28,7 +28,7 @@
                     <li>
                         <div class="login-form-input">
                             <i class="fa-regular fa-user"></i>
-                            <input type="text" name="id" id="id" placeholder="아이디를 입력해주세요">
+                            <input type="text" name="id" id="id" oninput="handleChange(event)" placeholder="아이디를 입력해주세요">
                             <!-- 자스 유효성체크를 위해서 id를 줌 -->
                         </div>
                         <p id="error-msg-id"></p>
@@ -36,7 +36,7 @@
                     <li>
                         <div class="login-form-input">
                             <i class="fa-solid fa-lock"></i>
-                            <input type="password" name="pwd" id="pwd" placeholder="비밀번호를 입력해주세요">
+                            <input type="password" name="pwd" id="pwd" oninput="handleChange(event)" placeholder="비밀번호를 입력해주세요">
                         </div>
                         <p id="error-msg-pwd"></p>
                     </li>
