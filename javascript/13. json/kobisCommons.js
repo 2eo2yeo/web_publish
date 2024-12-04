@@ -4,6 +4,7 @@
 export async function kobisBoxOffice(type, searchDt) {
   const key = `109a9287fde8058116adbf5e0b40fa00`;
   let url = `	http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/search${type}BoxOfficeList.json?key=${key}&targetDt=${searchDt}`;
+// http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=109a9287fde8058116adbf5e0b40fa00&targetDt=20241203
   console.log(url);
   
   let kobis = await fetch(url);      
