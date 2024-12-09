@@ -1,6 +1,5 @@
 
 
-
 export default function SpecialItem({text1, text2}) {
     
     return(

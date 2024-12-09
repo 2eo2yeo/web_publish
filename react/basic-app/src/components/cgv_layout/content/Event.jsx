@@ -1,33 +1,27 @@
 import EventItem from "./EventItem";
+import { useState, useEffect } from 'react';
+
 
 export default function Event() {
-    
-    const list = [
-        {"src" : "https://img.cgv.co.kr/WebApp/contents/eventV4/42386/17297657794310.jpg",
-        "title" : "[CGV]10월 컬처위크",
-        "date" : "2024.10.24~2024.10.31"
-        },
 
-        {"src" : "/images/event1.jpg" ,
-        "title" : "[콜렉터블 무비머니]Vol.1 맥스 달튼",
-        "date" : "2024.09.25~2024.10.31"
-        },
-        {"src" : "https://img.cgv.co.kr/WebApp/contents/eventV4/42888/17332152020130.jpg" ,
-        "title" : " [모아나2] 4DX 스페셜 포스터",
-        "date" : "2024.12.07 ~ 2024.12.08"
-        },
-    ];
+    const [list, setList] = useState([]);
+    useEffect(()=> {
+        fetch("/data/cgv_content.json")
+            .then(data => data.json())
+            .then(jsonData => setList(jsonData.eventList))
+            .catch(error=>console.log(error))
+    }, []);
 
     return(
         <section>
             <div className="content-title-style">
                 <h3 className="content-title-style-font">EVENT</h3>
-                <button class="total-view-button">전체보기 &gt;</button>
+                <button className="total-view-button">전체보기 &gt;</button>
             </div>
             <ul className="content-event-list">
-                {list.map(item => 
+                {list && list.map(item =>    /* list가 존재할 때만 출력하겠습니다 */
                 <li>
-                    <EventItem 
+                    <EventItem
                     src={item.src}
                     title={item.title}
                     date={item.date}

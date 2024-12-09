@@ -1,7 +1,11 @@
-export default function Footer() {
+
+
+export default function Footer({children}) {
     
     return(
-        
+        <footer>
+            {children}
+        </footer>
     );
 
 }
