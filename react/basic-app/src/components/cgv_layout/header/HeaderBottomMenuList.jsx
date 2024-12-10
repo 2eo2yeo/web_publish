@@ -22,6 +22,7 @@ export default function HeaderBottomMenuList() {
 
     // const names=[
     //     {"name":"영화"},
+    
     //     {"name":"극장"},
     //     {"name":"예매"},
     //     {"name":"스토어"},

@@ -1,0 +1,45 @@
+
+[
+    {
+        "img" : "https://a0.muscache.com/im/pictures/56651577/34bb7eeb_original.jpg?im_w=720&im_format=avif",
+        "d1" : "한국 가평군",
+        "d2" : "강변 전망",
+        "d3" : "12월 10일~ 15일",
+        "d4" : "$123,456 /박",
+        "color" : "coral"
+    },
+    {
+        "img" : "https://a0.muscache.com/im/pictures/5c9b8c1e-a83d-4f89-b4f5-5a255bacb50b.jpg?im_w=720&im_format=avif",
+        "d1" : "한국 캘리포니아",
+        "d2" : "정원 전망",
+        "d3" : "12월 10일~ 15일",
+        "d4" : "$123,456 /박",
+        "color" : "gray"
+    },
+    {
+        "img" : "https://a0.muscache.com/im/pictures/5c9b8c1e-a83d-4f89-b4f5-5a255bacb50b.jpg?im_w=720&im_format=avif",
+        "d1" : "한국 캘리포니아",
+        "d2" : "정원 전망",
+        "d3" : "12월 10일~ 15일",
+        "d4" : "$123,456 /박",
+        "color" : "gray",
+        "isGood" : true
+    },
+    {
+        "img" : "https://a0.muscache.com/im/pictures/5c9b8c1e-a83d-4f89-b4f5-5a255bacb50b.jpg?im_w=720&im_format=avif",
+        "d1" : "한국 캘리포니아",
+        "d2" : "정원 전망",
+        "d3" : "12월 10일~ 15일",
+        "d4" : "$123,456 /박",
+        "color" : "gray"
+    },
+    {
+        "img" : "https://a0.muscache.com/im/pictures/0e81e783-2f61-4aa7-b922-aef6e36a611a.jpg?im_w=720&im_format=avif",
+        "d1" : "한국 시드니",
+        "d2" : "강변 전망",
+        "d3" : "12월 10일~ 15일",
+        "d4" : "$123,456 /박",
+        "color" : "gray"
+    }
+
+]
