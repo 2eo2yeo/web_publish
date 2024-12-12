@@ -22,12 +22,12 @@ export default function Product(props) {
                 {props.description}
             </div>
             <div className='price'>
-                <span className='sprice'>{props.sprice}</span>
-                <span className='fprice'>{props.fprice}</span>
+                <span className='sprice'>{Number(props.sprice).toLocaleString()}원</span>
+                <span className='fprice'>{Number(props.fprice).toLocaleString()}원</span>
             </div>
             <div className='tags'>
                 {props.isSale && <span className='t1'>세일</span>}
-                {props.isCupon && <span className='t2'>쿠폰</span>}
+                {props.isCoupon && <span className='t2'>쿠폰</span>}
                 {props.isToday && <span className='t3'>오늘드림</span>}
             </div>
         </div>

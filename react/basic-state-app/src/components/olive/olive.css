@@ -1,106 +1,95 @@
-
 header {
     padding: 20px 0;
     border-bottom: 1px solid lightgray;
     display: flex;
     justify-content: space-between;
 }
-
 header img {
-    width: 20%;
+    width: 320px;
     margin-left: 20px;
 }
-
 header ul {
     display: flex;
-    list-style: none;
+    list-style-type: none;
     justify-content: right;
-    margin-right: 50px;
+    margin-right: 20px;
 }
-
 
 .menu-button {
-    background-color:  white;
-    border: white;
-    border-right: 1px solid lightgray;
+    background-color: white;
+    border: 1px solid white;
+    border-right: 1px solid gray;
 }
 
-/***********************************
-body
-*********************************/
-
+/********************************/
 .body {
     width: 1000px;
     margin: auto;
 }
-
 .product-list-container {
-    display: flex;
-    gap:  20px;
+    /* display: flex;
+    gap: 40px; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     list-style-type: none;
     margin: 20px 0;
 }
 .product-container {
-    width: 220px;
-    /* height: 300ox; */
-    text-align: center;
+    width: 200px;
+    /* height: 300px; */
+    padding: 30px 0;
 }
-
 .product-container img {
     width: 200px;
-    /* border: 1px solid red; */
 }
-
 .product-container .title {
     color: gray;
     font-weight: bold;
     text-align: center;
+    margin: 0;
 }
-
 .product-container .description {
     font-size: 10pt;
+    /* padding: 5px; */
 }
-
 .product-container .price {
     text-align: center;
 }
-
 .product-container .fprice {
     font-size: 13pt;
-    color: red;
     font-weight: bold;
+    color:red;
 }
 .product-container .tags {
     text-align: center;
-    border-radius: 50%;
 }
 .product-container .tags span {
-    /* background-color: aquamarine; */
-    font-size: 9pt;
-    padding: 3px 5px;
-    border-radius: 15px;
-    margin: 5px;
-    color: white;
+    display: inline-block;
+    height: 18px;
+    border-radius: 9px;
+    line-height: 17px !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none !important;
+    margin: 0 !important;
 }
-
 .product-container .t1 {
     width: 40px;
-    background-color: #F65C60;
+    background-color: #f65c60;
 }
 .product-container .t2 {
     width: 40px;
-    background-color: #9BCE26;
+    background-color: #9bce26;
 }
 .product-container .t3 {
     width: 60px;
-    background-color: #F374B7;
+    background-color: #f374b7;
 }
-
-
 .cart {
-    color: gray;
+    color:gray;
 }
-
 .cart:hover {
-    color: coral;
+    color:coral;
 }
