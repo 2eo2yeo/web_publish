@@ -38,6 +38,7 @@ export default function BookList() {
         <>
         <div>
             <input type="radio" name="type" value="total" onClick={handleClick}/>전체도서
+            {/* onClick={()=>{}} 이렇게도 함수호출 가능 */}
             <input type="radio" name="type" value="domestic" onClick={handleClick}/>국내도서
             <input type="radio" name="type" value="overseas" onClick={handleClick}/>국외도서
             {/* 카테고리 데이터 반복 */}
