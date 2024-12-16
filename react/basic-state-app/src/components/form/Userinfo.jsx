@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import {validateForm} from '../../apis/validate.js';
 
 export default function Userinfo() {
 
@@ -16,27 +17,32 @@ export default function Userinfo() {
         setForm({...form, [name]:value});    //{'name':'','address':''} 이걸 새로 만드는 작업임   ({...기존값, 추가할 값})
     }
 
-    const validateForm = () => {
-        let result = true; 
-        if(nameRef.current.value === '') {
-            alert('이름을 입력해주세요')
-            nameRef.current.focus();
-            result = false;
-        } else if (addressRef.current.value === '') {
-            alert('주소를 입력해주세요')
-            addressRef.current.focus();
-            result = false;
-        } else if (ageRef.current.value === '') {
-            alert('나이를 입력해주세요')
-            ageRef.current.focus();
-            result = false;
-        } return result;
-    }
+    // const validateForm = () => {
+    //     let result = true; 
+    //     if(nameRef.current.value === '') {
+    //         alert('이름을 입력해주세요')
+    //         nameRef.current.focus();
+    //         result = false;
+    //     } else if (addressRef.current.value === '') {
+    //         alert('주소를 입력해주세요')
+    //         addressRef.current.focus();
+    //         result = false;
+    //     } else if (ageRef.current.value === '') {
+    //         alert('나이를 입력해주세요')
+    //         ageRef.current.focus();
+    //         result = false;
+    //     } return result;
+    // }
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if(validateForm()) console.log(form);
+        const param = {
+            'nameRef' : nameRef,
+            'addressRef' : addressRef,
+            'ageRef': ageRef
+        };
+        if(validateForm(param)) console.log(form);
         }
 
 

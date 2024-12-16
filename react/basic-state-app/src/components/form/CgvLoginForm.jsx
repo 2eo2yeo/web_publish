@@ -1,39 +1,65 @@
+//함수들 레퍼런스 정리
+
 import React, { useRef, useState } from 'react';
 import './cgv.css'
 import './commons.css'
+import { validata } from '../../apis/validate.js';
 
 export default function CgvLoginForm() {
 
-    const idRef = useRef(null);
-    const pwdRef = useRef(null);
+    // const idRef = useRef(null);
+    // const pwdRef = useRef(null);
+
+    const refs = {
+        idRef: useRef(null), //주솟값을 넣는 참조변수 refs.idRef
+        pwdRef: useRef(null)
+    };
 
     const initFormData = {'id':'', 'pwd':''};   //input의 name 값 가져오기
     const [formData, setFormData] = useState(initFormData);
+    const [errorMsg, setErrorMsg] = useState({'id':'', 'pwd':''});
 
     const handleChangeForm = (event) => {
         const {name, value} = event.target //구조분해할당으로 데이터 가져오기
         setFormData({...formData,[name]:value});  //setFormData()에 가져온 데이터 넣어주기
+        if(name === 'id') {
+            (value === '') ?
+            setErrorMsg({...errorMsg, ['id']:'아이디를입력해주세요'}) : 
+            setErrorMsg({...errorMsg, ['id']:''}) ; //입력시 사라지게
+        } else if (name === 'pwd') {
+            (value === '') ?
+            setErrorMsg({...errorMsg, ['pwd']:'비밀번호를입력해주세요'}) :
+            setErrorMsg({...errorMsg, ['pwd']:''}) ;
+        }
     }
 
 
-    const validata = () => {
-        let result = true;
-        if(idRef.current.value === '') {
-            alert('아이디를 입력해주세요')
-            idRef.current.focus();
-            result = false;
-        } else if (pwdRef.current.value === '') {
-            alert('비밀번호를 입력해주세요')
-            pwdRef.current.focus();
-            result = false;
-        } return true
-    }
+    // const validata = () => {
+    //     let result = true;
+    //     if(idRef.current.value === '') {
+    //         setErrorMsg({...errorMsg, ['id']:'아이디를입력해주세요'})
+    //         idRef.current.focus();
+    //         result = false;
+    //     } else if (pwdRef.current.value === '') {
+    //         setErrorMsg({...errorMsg, ['pwd']:'비밀번호를 입력해주세요'})
+    //         pwdRef.current.focus();
+    //         result = false;
+    //     } return true
+    // }
 
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if(validata()) console.log(formData);
+
+        //validate.js에 파라미터로 객체리터럴 데이터를 넘겨줌(내용이 많아서)
+        const param = {
+            // 'idRef':idRef, 
+            // 'pwdRef':pwdRef,
+            'refs' : refs, //참조의 참조...
+            'errorMsg':errorMsg,
+            'setErrorMsg': setErrorMsg };
+        if(validata(param)) console.log(formData);
     }
 
     return (
@@ -52,10 +78,10 @@ export default function CgvLoginForm() {
                                 id="id" 
                                 // oninput="handleChange(event)" 
                                 onChange={handleChangeForm}
-                                ref={idRef}
+                                ref={refs.idRef} 
                                 placeholder="아이디를 입력해주세요" />
                         </div>
-                        <p id="error-msg-id"></p>
+                        <p id="error-msg-id" style={{'color':'red'}}>{errorMsg.id}</p>
                     </li>
                     <li>
                         <div className="login-form-input">
@@ -65,10 +91,10 @@ export default function CgvLoginForm() {
                                     id="pwd" 
                                     // oninput="handleChange(event)"
                                     onChange={handleChangeForm} 
-                                    ref={pwdRef}
+                                    ref={refs.pwdRef} 
                                     placeholder="비밀번호를 입력해주세요" />
                         </div>
-                        <p id="error-msg-pwd"></p>
+                        <p id="error-msg-pwd" style={{'color':'red'}}>{errorMsg.pwd}</p>
                     </li>
                     <li>
                         <button type="submit" className="btn-main-color">로그인</button>
