@@ -1,0 +1,56 @@
+.container {
+    width: 1000px;
+    margin: auto;
+}
+
+
+
+.container-avatar {
+    display: flex;
+    align-items: center;
+    
+}
+.container-avatar p {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0 15px;
+}
+
+.container-avatar img {
+    width: 120px;
+    height: 180px;
+    /* position: absolute; */
+}
+
+.container-content {
+    width: 400px;
+    height: 140px;
+    padding: 20px 30px;
+    background-color: rgb(238, 234, 218);
+    align-items: center;
+    
+}
+
+.container-content-tags {
+    margin-bottom: 5px;
+}
+
+.container-content-tags span {
+    background-color: gray;
+    color: white;
+    font-size: 12px;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 5px;
+    
+}
+
+.container-button {
+    list-style-type: none;
+    height: 180px;
+    background-color: rgb(158, 157, 155);
+    padding: 25px;
+    box-sizing: border-box; /* 패딩을 포함하여 높이를 계산 */
+    justify-content: center;
+    margin: 0;
+}

@@ -5,19 +5,19 @@ import './index.css';
 // import AppAvatar from './components/avatar/AppAvatar';
 // import AppCounter from './components/counter/AppCounter';
 // import AppCounter2 from './components/counter2/AppCounter2';
-// import AppBestSeller from './components/yes24/AppBestSeller';
+import AppBestSeller from './components/yes24/AppBestSeller';
 // import AppOlive from './components/olive/AppOlive.jsx';
 // import AppAladin from './components/aladin/AppAladin.jsx';
 // import AppAladin from './components/aladin/AppAladin.jsx';
 // import AppAladin2 from './components/aladin2/AppAladin2.jsx';
-import AppForm from './components/form/AppForm.jsx';
+// import AppForm from './components/form/AppForm.jsx';
 // import CgvLoginForm from './components/form/CgvLoginForm.jsx';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppForm />
+    <AppBestSeller />
   </React.StrictMode>
 );
 

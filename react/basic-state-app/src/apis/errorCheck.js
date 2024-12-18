@@ -24,19 +24,6 @@ export const errorCheckSignup = (name, value, errors, setErrors) => {
     //     setErrors({...errors,['id']:''});
     // } else if(name === 'pwd') {
     //     (value === '') ? setErrors({...errors, ['pwd'] : '12자 이내의 비밀번호를 입력해주세요'}) : setErrors({...errors,['pwd']:''});
-    // } else if(name === 'cpwd') {
-    //     (value === '') ? setErrors({...errors, ['cpwd'] : '비밀번호를 확인해주세요'}) :
-    //     setErrors({...errors,['cpwd']:''});
-    // } else if(name === 'name') {
-    //     (value === '') ? setErrors({...errors, ['name'] : '이름을 입력해주세요'}) :
-    //     setErrors({...errors,['name']:''});
-    // } else if (name === 'phone') {
-    //     (value === '') ? setErrors({...errors, ['phone'] : '전화번호를 입력해주세요'}) :
-    //     setErrors({...errors,['phone']:''});
-    // } else if (name === 'emailName') {
-    //     (value === '') ? setErrors({...errors, ['emailName'] : '이메일 주소를 입력해주세요'}) :
-    //     setErrors({...errors,['emailName']:''});
-    // } 
 }
 
 

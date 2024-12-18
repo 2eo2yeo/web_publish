@@ -17,7 +17,7 @@ export default function BestBookButton({qtyChange}) {
 
 
     return (
-        <ul>
+        <ul className='container-button'>
             <li>
                 <input type="checkbox"></input>
                 <button type='button' onClick={()=>{handleClick('-')}}>-</button>
@@ -25,7 +25,7 @@ export default function BestBookButton({qtyChange}) {
                 <button type='button' onClick={()=>{handleClick('+')}}>+</button>
             </li>
             <li>
-                <button type='button' onClick={()=>{qtyChange(qty)}}>카트에넣기</button> {/* 부모쪽에있는 핸들체인지로 지금 현재 usestate로 관리중인 숫자(qty)가 넘어간다 */}
+                <button type='button' >카트에넣기</button> {/* 부모쪽에있는 핸들체인지로 지금 현재 usestate로 관리중인 숫자(qty)가 넘어간다 */}
                 </li>
             <li>
                 <button type='button' >바로구매</button>
