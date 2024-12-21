@@ -10,9 +10,11 @@ import AppBestSeller from './components/yes24/AppBestSeller';
 // import AppAladin from './components/aladin/AppAladin.jsx';
 // import AppAladin from './components/aladin/AppAladin.jsx';
 // import AppAladin2 from './components/aladin2/AppAladin2.jsx';
-// import AppForm from './components/form/AppForm.jsx';
+import AppForm from './components/form/AppForm.jsx';
 // import CgvLoginForm from './components/form/CgvLoginForm.jsx';
 import reportWebVitals from './reportWebVitals';
+// import AppRouter from './components/router/AppRouter.jsx';
+import AppRouter2 from './components/router2/AppRouter2.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -34,18 +34,6 @@ export default function CgvLoginForm() {
     }
 
 
-    // const validata = () => {
-    //     let result = true;
-    //     if(idRef.current.value === '') {
-    //         setErrorMsg({...errorMsg, ['id']:'아이디를입력해주세요'})
-    //         idRef.current.focus();
-    //         result = false;
-    //     } else if (pwdRef.current.value === '') {
-    //         setErrorMsg({...errorMsg, ['pwd']:'비밀번호를 입력해주세요'})
-    //         pwdRef.current.focus();
-    //         result = false;
-    //     } return true
-    // }
 
 
 

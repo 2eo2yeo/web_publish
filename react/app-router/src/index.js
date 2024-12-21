@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import './index.css';
+import './index.css';
 // import App from './App';
-import AppCgv from './components/cgv_layout/AppCgv.jsx';
+import AppPortfolio from './components/AppPortfolio';
 import reportWebVitals from './reportWebVitals';
-import AppLayout from './components/layout/AppLayout.jsx';
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-const root = ReactDOM.createRoot(document.querySelector('body'));
-// react돔이 이부분을 통해 만들어짐
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppCgv />
+    <AppPortfolio />
   </React.StrictMode>
 );
 

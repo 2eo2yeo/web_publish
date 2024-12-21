@@ -65,21 +65,33 @@ export const validateFormSignup2 = (refs) => {
         console.log(refEntries);
 
     const msgs = {
-    'idRef' : '아이디', 'passRef' : '패스워드'};
+    'idRef' : '아이디', 'passRef' : '패스워드',
+    'jobRef' : '직업'};
 
 
         /* !!! 배열.map() or 배열.forEach() 함수는 배열 객체를 순회하는 것이 목적이므로 
         if 체크 후 focus가 적용되지 않음 -> 그래서 for을 사용 */
 
+    
+
     for(const item of refEntries) {
         const name = item[0]; //item 0번지가져오기
         const ref = item[1]; //item 1번지가져오기
+
+        if(name !== 'jobRef') {
         if(ref && ref.current.value === '') {
             alert(`${msgs[name]}를 입력해주세요`)
             ref.current.focus();
             return false;
         }
+        } else {
+            if(ref && ref.current.value === 'default') {
+                alert(`${msgs[name]}를 선택해주세요`)
+                ref.current.focus();
+                return false;
+        }
     }
+}
     
     // let checkResult = true;
     // if (refs.idRef.current.value === '') {
@@ -152,6 +164,8 @@ export const validateFormSignup2 = (refs) => {
 //바로 갖다 쓸 수 없기 때문에 메인페이지에서 파라미터로 전달해줘야함
 //컴포넌트가 아닌 함수이기때문에 props로 받는게 아님!! 
 // 객체 리터럴을 넘기면 callbyreference 임
+
+
 export const validata = (param) => {
     let result = true;
 
@@ -163,7 +177,7 @@ export const validata = (param) => {
         param.setErrorMsg({...param.errorMsg, ['pwd']:'비밀번호를 입력해주세요'})
         param.refs.pwdRef.current.focus();
         result = false;
-    } return true
+    } return true;
 }
 
 

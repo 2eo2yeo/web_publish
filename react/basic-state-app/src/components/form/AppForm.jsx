@@ -13,8 +13,8 @@ export default function AppForm() {
             {/* <Userinfo /> */}
             {/* <CgvLoginForm /> */}
             {/* <Login2 /> */}
-            <Signup />
-            {/* <Signup2 /> */}
+            {/* <Signup /> */}
+            <Signup2 />
         </div>
     );
 }

@@ -1,0 +1,143 @@
+{
+    "testiList" : [
+        {
+            "src" : "images/testimonials/people1.webp",
+            "alt" : "people1",
+            "lorem" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis similique, unde nam totam quam, nisi odio error amet provident iste modi eos dicta, eum suscipit rem illum inventore sapiente blanditiis?",
+            "name" : "James Kim",
+            "company" : "Google",
+            "order" : 0
+        }, 
+        {
+            "src" : "images/testimonials/people2.webp",
+            "alt" : "people2",
+            "lorem" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore necessitatibus sequi id obcaecati, assumenda quam corrupti. Numquam blanditiis praesentium, similique autem, accusamus debitis cupiditate, tempora officiis sed inventore nihil incidunt.",
+            "name" : "Smith Park",
+            "company" : "Samsung",
+            "order" : 1        }, 
+        {
+            "src" : "images/testimonials/people3.webp",
+            "alt" : "people3",
+            "lorem" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio nulla incidunt autem ullam, commodi in impedit repellat exercitationem provident at recusandae doloremque pariatur temporibus hic blanditiis explicabo voluptatibus neque aliquam.",
+            "name" : "Anna Jin",
+            "company" : "Samsung",
+            "order" : 0
+        }
+    ],
+
+    "barList" : [
+        {
+            "name" : "HTML",
+            "per" : "98%"
+        },
+        {
+            "name" : "CSS",
+            "per" : "90%"
+        },
+        {
+            "name" : "JavaScript",
+            "per" : "90%"
+        },
+        {
+            "name" : "TypeScript",
+            "per" : "80%"
+        },
+        {
+            "name" : "React",
+            "per" : "79%"
+        },
+        {
+            "name" : "NodeJS",
+            "per" : "68%"
+        }
+    ], 
+
+    "toolsList" : [
+        { "tool" : "Visual Studio Code" },
+        { "tool" : "IntelliJ" },
+        { "tool" : "Android Studio Code" },
+        { "tool" : "iOS development tools" },
+        { "tool" : "Eclipse" }
+    ],
+
+
+    "etcToolList" : [
+        { "etc" :"Git" },
+        { "etc" :"Scrum Master" },
+        { "etc" :"SVN" }
+    ],
+    
+    "workList" : [
+        {
+            "name" : "All",
+            "category" : "all",
+            "count": "8"
+        },
+        {
+            "name" : "Front-end",
+            "category" : "front",
+            "count": "4"
+        },
+        {
+            "name" : "Back-end",
+            "category" : "back",
+            "count": "2"
+        },
+        {
+            "name" : "Mobile",
+            "category" : "mobile",
+            "count": "2"
+        }
+    ],
+
+    "projectList" : [
+        {
+            "src" : "images/projects/project1.webp",
+            "alt" : "project1",
+            "name" : "Project #1", 
+            "text" : "Clone Coding with HTML, CSS"
+        },
+        {
+            "src" : "images/projects/project2.webp",
+            "alt" : "project2",
+            "name" : "Project #2", 
+            "text" : "Clone Coding with HTML, CSS"
+        },
+        {
+            "src" : "images/projects/project3.webp",
+            "alt" : "project3",
+            "name" : "Project #3", 
+            "text" : "Clone Coding with HTML, CSS"
+        },
+        {
+            "src" : "images/projects/project4.webp",
+            "alt" : "project4",
+            "name" : "Project #4", 
+            "text" : "Clone Coding with HTML, CSS"
+        },
+        {
+            "src" : "images/projects/project5.webp",
+            "alt" : "project5",
+            "name" : "Project #5", 
+            "text" : "Clone Coding with HTML, CSS"
+        },
+        {
+            "src" : "images/projects/project6.webp",
+            "alt" : "project6",
+            "name" : "Project #6", 
+            "text" : "Clone Coding with HTML, CSS"
+        },
+        {
+            "src" : "images/projects/project7.webp",
+            "alt" : "project7",
+            "name" : "Project #7", 
+            "text" : "Clone Coding with HTML, CSS"
+        },
+        {
+            "src" : "images/projects/project8.webp",
+            "alt" : "project8",
+            "name" : "Project #8", 
+            "text" : "Clone Coding with HTML, CSS"
+        }
+    ]
+}
