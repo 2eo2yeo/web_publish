@@ -7,3 +7,4 @@ gugudan();              // 전체(1~9) 출력
 
 fruitsTower('🍎', 5);
 fruitsTower('🍊', 10);
+

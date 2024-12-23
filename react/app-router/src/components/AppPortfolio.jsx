@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './Layout.jsx'
-import About from './about/About.jsx'
-import Skills from './skills/Skiils.jsx'
-import MyWork from './mywork/MyWork.jsx'
-import Testimonial from './testimonial/Testimonial.jsx'
+// import About from './about/About.jsx'
+// import Skills from './skills/Skiils.jsx'
+// import MyWork from './mywork/MyWork.jsx'
+// import Testimonial from './testimonial/Testimonial.jsx'
 import './css/style.css'
 
 export default function AppPortfolio() {

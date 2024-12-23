@@ -19,6 +19,9 @@
   --color-text: var(--color-white);
 
   /* Color list */
+  --color-lightbrown:rgb(233, 228, 199);
+  --color-indiepink: rgb(214, 174, 211);
+  --color-darkgreen:#02573a;
   --color-white: #ffffff;
   --color-black: #050a13;
   --color-blue: #03e8f9;
@@ -57,7 +60,7 @@ button {
   outline: 0;
 }
 button:focus {
-  outline: 1px solid var(--color-accent);
+  outline: 1px solid var(--color-indiepink);
 }
 .max-container {
   max-width: var(--max-size-width);
@@ -81,7 +84,7 @@ button:focus {
   header
 */
 .header {
-  background-color: var(--color-primary);
+  background-color: var(--color-lightbrown);
   width: 100%;
   padding: 1rem;
   display: flex;
@@ -107,18 +110,17 @@ button:focus {
   /* padding-right: 8px; */
 }
 .header__menu {
-  /* border: 1px solid yellowgreen; */
   display: flex;
   gap: 4px;
 }
 .header__menu__item {
   padding: 8px 16px;
   color: var(--color-text);
+  background-color: var(--color-indiepink);
+  border-radius: 12px;
+  font-weight: 600;
 }
-.header__menu__item.active {
-  /* border: 1px solid var(--color-accent); */
-  border-radius: 4px;
-}
+
 .header__toggle {
   display: none;
   color: var(--color-text);
@@ -132,8 +134,8 @@ button:focus {
   Home
 */
 #home {
-  background-color: var(--color-primary);
-  color: var(--color-text);
+  background-color: var(--color-lightbrown);
+  color: var(--color-darkgreen);
   padding: 5rem 1rem;
   padding-top: 7rem;
   text-align: center;
@@ -141,7 +143,7 @@ button:focus {
 .home__avatar {
   width: 250px;
   height: 250px;
-  border: 5px solid var(--color-accent);
+  border: 5px solid var(--color-indiepink);
   border-radius: 100%;
 }
 .home__title {
@@ -149,7 +151,7 @@ button:focus {
   margin-bottom: 1rem;
 }
 .home__title--strong {
-  color: var(--color-accent);
+  color: var(--color-indiepink);
 }
 .home__description {
   font-size: 1.3rem;
@@ -159,20 +161,21 @@ button:focus {
   display: inline-block;
   padding: 0.5rem 1rem;
   margin: 2rem;
-  background-color: var(--color-accent);
+  background-color: var(--color-indiepink);
   font-weight: bold;
   border-radius: 4px;
-  color: var(--color-primary);
+  color: var(--color-text);
 }
 .home__contact:hover {
   color: var(--color-text);
-  background-color: var(--color-primary);
+  background-color: var(--color-indiepink);
   border: 2px solid var(--color-accent);
 }
 
 /*
   About me
 */
+
 .majors {
   /* border: 1px solid green; */
   display: flex;
@@ -182,15 +185,19 @@ button:focus {
   margin: 2.5rem 0;
 }
 .major {
-  background-color: var(--color-gray);
+  background-color: var(--color-indiepink);
   color: var(--color-text);
   padding: 2rem 1rem;
   border-radius: 1rem;
   box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
 }
+
+.major p {
+  color: var(--color-text);
+}
 .major__icon {
   font-size: 4rem;
-  color: var(--color-accent);
+  color: var(--color-white);
   margin: 1rem 0;
 }
 .major__title {
@@ -220,33 +227,34 @@ button:focus {
   Skills
 */
 #skill {
-  background-color: var(--color-gray);
+  background-color: #043d2a;;
   color: var(--color-text);
 }
 .skills {
   display: grid;
-  grid-template-columns: 6fr 4fr;    /* 여기생각하기 */
+  grid-template-columns: 6fr 4fr; 
   margin: 2rem 0;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
 }
 .skill__title {
-  color: var(--color-accent);
+  color: var(--color-text);
   font-size: 1.2rem;
   margin: 1rem 0;
 }
 .sklls__coding {
   grid-row: span 2;
-  background-color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 1rem;
 }
 .skills__tools {
   padding: 1rem;
+  background-color: rgb(214, 174, 211, 0.7);
 }
 .skills__etc {
   padding: 1rem;
-  background-color: var(--color-primary);
+  background-color: rgba(205, 197, 149, 0.7);
   filter: brightness(150%);
 }
 .bar {
@@ -266,14 +274,14 @@ button:focus {
 }
 .bar__value {
   height: 3px;
-  background-color: var(--color-accent);
+  background-color: var(--color-indiepink);
 }
 
 /*
   work
 */
 #work {
-  background-color: var(--color-primary);
+  background-color: #424240;
   color: var(--color-text);
 }
 .categories {
@@ -285,15 +293,23 @@ button:focus {
 .category {
   color: var(--color-text);
   padding: 0.5rem 3rem;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-indiepink);
   border-radius: 4px;
   font-size: 1.1rem;
   position: relative;
 }
+
 .category--selected {
-  color: var(--color-primary);
-  background-color: var(--color-accent);
+  color: var(--color-white);
+  background-color: var(--color-indiepink);
 }
+
+.category:hover {
+  color: var(--color-text);
+  background-color: var(--color-indiepink);
+}
+
+
 .category__count {
   position: absolute;
   top: -20px;
@@ -345,7 +361,7 @@ button:focus {
   height: 2px;
   content: '';
   display: block;
-  background-color: var(--color-accent);
+  background-color: var(--color-indiepink);
   position: relative;
   margin: 0.6rem 0;
   left: 50px;
@@ -384,7 +400,8 @@ button:focus {
 .testimonial__bubble__name {
   display: inline-block;
   margin-top: 0.3rem;
-  color: var(--color-accent);
+  color: var(--color-darkgreen);
+  font-weight: 800;
   filter: brightness(70%);
 }
 
@@ -399,17 +416,17 @@ button:focus {
   font-size: 3rem;
   width: 4.5rem;
   height:4.5rem;
-  background-color: var(--color-primary);
+  background-color: var(--color-indiepink);
   text-align: center;
   border-radius: 100%;
-  box-shadow: 5px 5px 0px 0px var(--color-accent);   
+  box-shadow: 5px 5px 0px 0px gray;   
 }
 
 /*
   Footer
 */
 #contact {
-  background-color: var(--color-primary);
+  background-color: var(--color-indiepink);
   color: var(--color-text);
 }
 .contact__links {
@@ -424,7 +441,7 @@ button:focus {
   color: var(--color-text);
 }
 .contact__link:hover {
-  color: var(--color-accent);
+  color: var(--color-indiepink);
 }
 
 

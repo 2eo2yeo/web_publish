@@ -26,7 +26,7 @@ export default function About() {
 
     return (
         <>
-            <section id="about" class="section max-container">
+            <section id="about" class="section max-container" style={{'color':'var(--color-darkgreen)'}}>
                 <h2 class="title">About me</h2>
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Iure natus, temporibus perspiciatis repudiandae nostrum modi

@@ -95,49 +95,57 @@
             "src" : "images/projects/project1.webp",
             "alt" : "project1",
             "name" : "Project #1", 
-            "text" : "Clone Coding with HTML, CSS"
+            "text" : "Clone Coding with HTML, CSS",
+            "category" : "front"
         },
         {
             "src" : "images/projects/project2.webp",
             "alt" : "project2",
             "name" : "Project #2", 
-            "text" : "Clone Coding with HTML, CSS"
+            "text" : "Clone Coding with HTML, CSS",
+            "category" : "mobile"
         },
         {
             "src" : "images/projects/project3.webp",
             "alt" : "project3",
             "name" : "Project #3", 
-            "text" : "Clone Coding with HTML, CSS"
+            "text" : "Clone Coding with HTML, CSS",
+            "category" : "front"
         },
         {
             "src" : "images/projects/project4.webp",
             "alt" : "project4",
             "name" : "Project #4", 
-            "text" : "Clone Coding with HTML, CSS"
+            "text" : "Clone Coding with HTML, CSS",
+            "category" : "mobile"
         },
         {
             "src" : "images/projects/project5.webp",
             "alt" : "project5",
             "name" : "Project #5", 
-            "text" : "Clone Coding with HTML, CSS"
+            "text" : "Clone Coding with HTML, CSS",
+            "category" : "back"
         },
         {
             "src" : "images/projects/project6.webp",
             "alt" : "project6",
             "name" : "Project #6", 
-            "text" : "Clone Coding with HTML, CSS"
+            "text" : "Clone Coding with HTML, CSS",
+            "category" : "front"
         },
         {
             "src" : "images/projects/project7.webp",
             "alt" : "project7",
             "name" : "Project #7", 
-            "text" : "Clone Coding with HTML, CSS"
+            "text" : "Clone Coding with HTML, CSS",
+            "category" : "front"
         },
         {
             "src" : "images/projects/project8.webp",
             "alt" : "project8",
             "name" : "Project #8", 
-            "text" : "Clone Coding with HTML, CSS"
+            "text" : "Clone Coding with HTML, CSS",
+            "category" : "back"
         }
     ]
 }

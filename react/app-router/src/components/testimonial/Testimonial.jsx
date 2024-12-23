@@ -12,9 +12,9 @@ export default function Testimonial() {
     },[]);
 
     return (
-        <section id="testimonial" class="section max-container">
-            <h2 class="title">Testimonial</h2>
-            <p class="description">See what they say about me</p>
+        <section id="testimonial" class="section max-container" style={{'color':'var(--color-darkgreen)', 'background':'linear-gradient(from ,#917a7a 0%, #fff 100%)'}}>
+            <h2 class="title testimonial-tle">Testimonial</h2>
+            <p class="description testimonial-des">See what they say about me</p>
             <ul class="testimonials">
                 {testList && testList.map((item, index) => (  
                     <li className="testimonial" key={index} style={{order : item.order}}>

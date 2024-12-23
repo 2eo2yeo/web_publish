@@ -38,6 +38,7 @@ export function singleGugudan(dan) {
     }
 }
 
+
 // 프루츠타워를 출력하는 함수 정의
 export function fruitsTower(emoji, floor) {
     for(let row=1; row<=floor; row++) {
