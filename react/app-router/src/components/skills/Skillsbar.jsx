@@ -8,7 +8,7 @@ export default function SkillsItem({name, per}) {
                 <span>{per}</span>
             </div>
             <div class="bar__bg">
-                <div class="bar__value" style={{ marginRight:'10px'}}></div>  
+                <div class="bar__value" style={{ 'width':`${per}%`}}></div>  
             </div>
         </>
     );

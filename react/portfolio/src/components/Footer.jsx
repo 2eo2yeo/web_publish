@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function Footer({children}) {
     return (
-        <div>
+        <footer id="contact" className="section">
             {children}
-        </div>
+        </footer>
     );
 }
 

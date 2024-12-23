@@ -110,15 +110,26 @@
     /* border: 1px solid yellowgreen; */
     display: flex;
     gap: 4px;
+
+    
   }
+
+  .header__menu li:first-child{
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+  }
+
+  
   .header__menu__item {
     padding: 8px 16px;
     color: var(--color-text);
   }
-  .header__menu__item.active {
+  /* .header__menu__item.active {
     border: 1px solid var(--color-accent);
     border-radius: 4px;
-  }
+  } */
+
+
   .header__toggle {
     display: none;
     color: var(--color-text);

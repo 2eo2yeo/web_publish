@@ -1,20 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import NavigationItem from './NavigationItem';
 
 export default function HeaderTop() {
+
+    const [menuList,setMenuList] = useState([]);
+    const [category,setCategory] = useState('');
+
+    useEffect(()=> {
+                fetch("/json/data.json")
+                .then(data => data.json())
+                .then((jsonData) => {
+                    setMenuList(jsonData.menuList);
+                    })
+                .catch(error => console.log(error))
+            },[category]);
+    
+        const handleClickMenu2 = (category) => {
+            setCategory(category);
+        }
+
     return (
-        <div>
-            
     <nav>
             <ul className="header__menu">
-        <li><a className="header__menu__item active" href="#home">Home</a></li>
-        <li><a className="header__menu__item" href="#about">About</a></li>
-        <li><a className="header__menu__item" href="#skill">Skills</a></li>
-        <li><a className="header__menu__item" href="#work">My work</a></li>
-        <li><a className="header__menu__item" href="#testimonial">Testimonial</a></li>
-        <li><a className="header__menu__item" href="#contact">Contact</a></li>
+                {menuList && menuList.map((menu)=>
+                <li>
+                    <NavigationItem
+                        href={menu.href}
+                        name={menu.name}
+                        click={handleClickMenu2}
+                        category={menu.category}
+                        isSelected={category === menu.category}
+                        />
+                </li>
+                )}
             </ul>
     </nav>
-        </div>
     );
 }
 

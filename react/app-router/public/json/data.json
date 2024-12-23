@@ -1,4 +1,41 @@
 {
+    "menuList" : [
+        { 
+            "href" : "#home",
+            "name" : "Home",
+            "category": "home"
+        },
+        { 
+            "href" : "#about",
+            "name" : "About",
+            "category": "about"
+        },
+        { 
+            "href" : "#skill",
+            "name" : "Skill",
+            "category": "skill"
+        },
+        { 
+            "href" : "#work",
+            "name" : "Work",
+            "category": "work"
+        },
+        { 
+            "href" : "#testimonial",
+            "name" : "Testimonial",
+            "category": "testimonial"
+        },
+        { 
+            "href" : "#contact",
+            "name" : "Contact",
+            "category": "contact"
+        }
+    ],
+    
+    
+    
+    
+    
     "testiList" : [
         {
             "src" : "images/testimonials/people1.webp",
@@ -28,27 +65,27 @@
     "barList" : [
         {
             "name" : "HTML",
-            "per" : "98%"
+            "per" : 98
         },
         {
             "name" : "CSS",
-            "per" : "90%"
+            "per" : 90
         },
         {
             "name" : "JavaScript",
-            "per" : "90%"
+            "per" : 90
         },
         {
             "name" : "TypeScript",
-            "per" : "80%"
+            "per" : 80
         },
         {
             "name" : "React",
-            "per" : "79%"
+            "per" : 79
         },
         {
             "name" : "NodeJS",
-            "per" : "68%"
+            "per" : 68
         }
     ], 
 

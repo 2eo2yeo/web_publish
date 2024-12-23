@@ -24,7 +24,7 @@
   --color-darkgreen:#02573a;
   --color-white: #ffffff;
   --color-black: #050a13;
-  --color-blue: #03e8f9;
+  /* --color-blue: #03e8f9; */
   --color-orange: #fd6413;
   --color-gray: #1b1e26;
 
@@ -114,12 +114,29 @@ button:focus {
   gap: 4px;
 }
 .header__menu__item {
+  margin: 2px;
   padding: 8px 16px;
   color: var(--color-text);
   background-color: var(--color-indiepink);
   border-radius: 12px;
   font-weight: 600;
+  border-bottom-color: rgba(0,0,0,0.34);
+  text-shadow:0 1px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+              0 2px 0 -1px rgba(0,0,0,0.13), 
+              0 3px 0 -1px rgba(0,0,0,0.08), 
+              0 3px 13px -1px rgba(0,0,0,0.21);
+
 }
+
+.header__menu__item.active {
+  background-color: rgb(223, 214, 131);
+  top: 1px;
+  border-color: rgba(0,0,0,0.34) rgba(0,0,0,0.21) rgba(0,0,0,0.21);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.89),0 1px rgba(0,0,0,0.05) inset;
+  position: relative;
+}
+
 
 .header__toggle {
   display: none;

@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function Logo() {
+export default function Logo({name, img}) {
     return (
         <div className="header__logo">
-            <img className="header__logo__img" src="images/favicon.ico" alt="logo" />
-                <h1 className="header__logo__title">Judy</h1>
+            <img className="header__logo__img" src={img} alt="logo" />
+                <h1 className="header__logo__title">{name}</h1>
         </div>
     );
 }
