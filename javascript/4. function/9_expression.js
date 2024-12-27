@@ -20,7 +20,7 @@ let add5 = (a, b, c) => {
     if( a>0 && b>0 && c>0){
         console.log(a+b+c);
     }else{
-        console.log(`a,b,c 는 0보다 커야함`); 
+        console.log(`${a}, ${b}, ${c} 는 0보다 커야함`);
     }
 }
 
@@ -30,3 +30,6 @@ console.log(add3());
 console.log(add4(10, 20));
 add5(1,2,-3);
 
+
+
+/*  */

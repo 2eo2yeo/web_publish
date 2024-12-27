@@ -1,7 +1,17 @@
+import { useState } from 'react';
 import React from 'react';
 import Menu from './Menu';
 
 export default function MenuList() {
+
+
+    const [selected, setSelected] = useState('Home');
+    const handleSelected = (menuName) => {
+        setSelected(menuName);
+    }
+    
+    
+
 
     const list = [
         { 'href': '#home', 'name': 'Home' },
@@ -17,7 +27,8 @@ export default function MenuList() {
             <ul className="header__menu">
                 {list && list.map((menu) =>
                     <li>
-                        <Menu href={menu.href} menuName={menu.name} />
+                        <Menu href={menu.href} menuName={menu.name}
+                            click={handleSelected} style={menu.name === selected ? 'header__menu__item active' : 'header__menu__item'}/>
                     </li>
                 )}
             </ul>
