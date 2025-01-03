@@ -3,6 +3,7 @@ use myshop2019;
 select database();
 show tables;
 
+
 /*
 	실습 데이터베이스 연결 : myshop2019
 	실습 내용 - 기본적인 데이터 조회 
@@ -99,22 +100,74 @@ where point >= '400,000' and point <= '500,000';
 
 
 -- Q20) 1990년에 출생한 고객의 이름, 아이디, 성별, 지역, 전화번호, 생일, 포인트를 조회하세요.
+
+
+
+SELECT customer_name, customer_id, gender, city, phone, BIRTH_DATE, POINT
+	FROM CUSTOMER
+    WHERE BIRTH_DATE between '1990-01-01' AND '1990-12-31';
+
 -- Q21) 1990년에 출생한 여자 고객의 이름, 아이디, 성별, 지역, 전화번호, 생일, 포인트를 조회하세요.
+
+SELECT customer_name, customer_id, gender, city, phone, BIRTH_DATE, POINT
+	FROM CUSTOMER
+    WHERE BIRTH_DATE between '1990-01-01' AND '1990-12-31' AND GENDER = 'F';
+
+
 -- Q22) 1990년에 출생한 '대구' 또는 '경주' 지역 남자 고객의 이름, 아이디, 성별, 지역, 전화번호, 생일, 포인트를 조회하세요.
+SELECT customer_name, customer_id, gender, city, phone, BIRTH_DATE, POINT
+	FROM CUSTOMER
+    WHERE BIRTH_DATE between '1990-01-01' AND '1990-12-31' AND GENDER = 'M' AND city IN('대구', '경주');
+
+
 -- Q23) 1990년에 출생한 남자 고객의 이름, 아이디, 성별, 지역, 전화번호, 생일, 포인트를 조회하세요.
 --      단, 홍길동(gildong) 형태로 이름과 아이디를 묶어서 조회하세요.
+SELECT CONCAT(customer_name, '(',customer_id,')'), gender, city, phone, BIRTH_DATE, POINT
+	FROM CUSTOMER
+    WHERE BIRTH_DATE between '1990-01-01' AND '1990-12-31' AND GENDER = 'M';
+
 -- Q24) 근무중인 직원의 이름, 사원번호, 성별, 전화번호, 입사일를 조회하세요.
+
+SELECT EMPLOYEE_NAME, EMPLOYEE_ID, GENDER, PHONE, HIRE_DATE  
+	FROM EMPLOYEE
+	WHERE RETIRE_DATE IS NULL;
+
 -- Q25) 근무중인 남자 직원의 이름, 사원번호, 성별, 전화번호, 입사일를 조회하세요.
+
+SELECT EMPLOYEE_NAME, EMPLOYEE_ID, GENDER, PHONE, HIRE_DATE  
+	FROM EMPLOYEE
+	WHERE RETIRE_DATE IS NULL AND GENDER = 'M';
+
 -- Q26) 퇴사한 직원의 이름, 사원번호, 성별, 전화번호, 입사일, 퇴사일를 조회하세요.
+
+SELECT EMPLOYEE_NAME, EMPLOYEE_ID, GENDER, PHONE, HIRE_DATE, RETIRE_DATE  
+	FROM EMPLOYEE
+	WHERE RETIRE_DATE IS NOT NULL;
 
 -- Q28) 2019-01-01 ~ 2019-01-07 기간 주문의 주문번호, 고객아이디, 사원번호, 주문일시, 소계, 배송비, 전체금액을 조회하세요.
 --      단, 고객아이디를 기준으로 오름차순 정렬해서 조회하세요.
+
+SELECT ORDER_ID, customer_ID, EMPLOYEE_ID, ORDER_DATE, SUB_TOTAL, DELIVERY_FEE, TOTAL_DUE
+ FROM order_header
+ORDER BY customer_ID ASC;
     
 -- Q29) 2019-01-01 ~ 2019-01-07 기간 주문의 주문번호, 고객아이디, 사원번호, 주문일시, 소계, 배송비, 전체금액을 조회하세요.
 --      단, 전체금액을 기준으로 내림차순 정렬해서 조회하세요.
 
+SELECT ORDER_ID, customer_ID, EMPLOYEE_ID, ORDER_DATE, SUB_TOTAL, DELIVERY_FEE, TOTAL_DUE
+ FROM order_header
+ WHERE ORDER_DATE BETWEEN '2019-01-01' AND '2019-01-07'
+ORDER BY TOTAL_DUE DESC;
+
+
 -- Q30) 2019-01-01 ~ 2019-01-07 기간 주문의 주문번호, 고객아이디, 사원번호, 주문일시, 소계, 배송비, 전체금액을 조회하세요.
 --      단, 사원번호를 기준으로 오름차순, 같은 사원번호는 주문일시를 기준으로 내림차순 정렬해서 조회하세요.
+SELECT ORDER_ID, customer_ID, EMPLOYEE_ID, ORDER_DATE, SUB_TOTAL, DELIVERY_FEE, TOTAL_DUE
+ FROM order_header
+ WHERE ORDER_DATE BETWEEN '2019-01-01' AND '2019-01-07'
+ORDER BY EMPLOYEE_ID ASC, ORDER_DATE DESC;
+
+
 
 /**
 	그룹함수
