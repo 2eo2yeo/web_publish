@@ -28,4 +28,7 @@ rabbit.display();
 rabbit.eat();
 rabbit.sleep();
 
+console.log(dog);
 
+console.log(dog.emoji);
+console.log(dog.color);
