@@ -15,6 +15,11 @@ export default function Login() {
     }  // 객체를 통으로 보내면 구조분해 할당으로 받을 수 있음
 
 
+    const msgRefs = {
+        'msgRef' : useRef(null)
+    }
+
+
     const [formData, setFormData] = useState({'id':'', 'pwd':''});  
     //아이디 비번 다 넘겨야함, 초기값을 블레이스로 묶기
     // 리턴쪽의 name 값이랑 맞춰줘야함 // 초기값이 null로 되어있으면 유효성 체크가 어려워짐
@@ -36,7 +41,7 @@ export default function Login() {
     const handleLoginSubmit = (event) => {
         event.preventDefault();
         
-        if(validateLogin(refs)) {
+        if(validateLogin(refs, msgRefs)) {
             console.log('send data --> ', formData);
             // 리액트 ---> 노드서버(express) 데이터 전송
         // 빈값이 넘어가면 안되기 때문에 유효성 체크 함수 생성
@@ -76,6 +81,10 @@ export default function Login() {
                                     placeholder="패스워드를 입력해주세요" />
                         </div>
                         <p id="error-msg-pwd"></p>
+                    </li>
+                    <li>
+                        <span style={{fontSize:"0.7em", color:"white"}}
+                            ref={msgRefs.msgRef}>아이디 또는 패스워드를 입력해주세요</span>
                     </li>
                     <li>
                         <button type="submit" className="login-button">로그인</button>

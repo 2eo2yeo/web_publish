@@ -1,21 +1,11 @@
-import React, {useRef, useState} from 'react';
-import '../style/signup.css';
+import React, { useRef, useState } from 'react';
+import '../styles/signup.css';
 import {validateSignup} from '../utils/funcValidate.js'
 
 export default function Signup() {
 
-    const names = ['id','pwd','cpwd','name','phone','emailname'] 
-    const namesKor = ['아이디','비밀번호','비밀번호 확인','이름','전화','이메일주소']
-    const placeholderKor = ['아이디(6~12자 이내)','비밀번호를 입력하세요', '비밀번호를 확인하세요', '이름을 입력하세요',  '전화번호를 입력하세요', '이메일주소를 입력하세요']
-
-    // 배열 함수 정의 
-    const placeholder = names.reduce((acc, name, idx)=>{
-        acc[name] = placeholderKor[idx]; return acc;
-    },{})
-
-    const labels = names.r
-
-
+    // 또는 alert가 아닌 글자를 띄우는 방식
+    // -> 글자를 띄우는 객체를 reference하는 참조값이 또 필요함 
     const msgRefs = {
         'msgIdRef' : useRef(null),
         'msgPwdRef' : useRef(null),
@@ -25,7 +15,8 @@ export default function Signup() {
         'msgEmailnameRef' : useRef(null),
         'msgEmaildomainRef' : useRef(null)
     }
-
+    
+    //form을 참조하는 것이 refs 
     const refs = {
         'idRef' : useRef(null),
         'pwdRef' : useRef(null),
@@ -36,6 +27,8 @@ export default function Signup() {
         'emaildomainRef' : useRef(null)
     }
 
+
+
     const initFormData = {
         'id':'', 
         'pwd':'',
@@ -43,30 +36,28 @@ export default function Signup() {
         'name':'',
         'phone':'',
         'emailname':''
-    } 
+    } //이벤트가 발생할때마다 여기 + 추가해서 넣어야함
 
+    const [formData, setFormData] = useState(initFormData)
+        // 또는 
 
+    /* change form */
+    const handleChangeForm = (event) => {
+        const {name, value} = event.target;   // const name = event.target.name;
+                                            //   const value = event.target.value;
+        
+        setFormData({...formData, [name]:value}); 
+    } //name이라는 변수가 property가 되기위해서는 []대괄호 사용
 
-    const [formData, setFormData] = useState(initFormData);
-
-    //changeform
-    const handleChangeForm = (e) => {
-        const {name, value} = e.target;
-        setFormData({...formData, [name]:value})
-    }
-
-
-    //submit함수
-    const handleSignupSubmit = (e) => {
-        e.preventDefault();
+    /* submit함수 */
+    const handleSignupSubmit = (event) => {
+        event.preventDefault();
+        
         // 서버로 전송
-        if(validateSignup(refs,msgRefs)) {
+        if(validateSignup(refs,msgRefs)) { //formData 찍기 전 validate진행
             console.log(formData);
-            
         }
     }
-
-
 
 
     return (
@@ -81,8 +72,8 @@ export default function Signup() {
                             <input type="text" 
                                     name="id"
                                     id="id"
-                                    onChagne={handleChangeForm}
                                     ref={refs.idRef}
+                                    onChange={handleChangeForm}
                                     placeholder = "아이디 입력(6~20자)" />
                             <button type="button" >중복확인</button>
                             <input type="hidden" id="idCheckResult" value="default" />
@@ -95,8 +86,8 @@ export default function Signup() {
                             <input type="password" 
                                     name="pwd"
                                     id="pwd"
-                                    onChagne={handleChangeForm}
                                     ref={refs.pwdRef}
+                                    onChange={handleChangeForm}
                                     placeholder="비밀번호 입력(문자,숫자,특수문자 포함 6~12자)" />
                         </div>
                     </li>
@@ -107,8 +98,8 @@ export default function Signup() {
                             <input type="password" 
                                     name="cpwd"
                                     id="cpwd"
-                                    onChagne={handleChangeForm}
                                     ref={refs.cpwdRef}
+                                    onChange={handleChangeForm}
                                     placeholder="비밀번호 재입력" />
                         </div>
                     </li>
@@ -119,8 +110,8 @@ export default function Signup() {
                             <input type="text" 
                                     name="name"
                                     id="name"
-                                    onChagne={handleChangeForm}
                                     ref={refs.nameRef}
+                                    onChange={handleChangeForm}
                                     placeholder="이름을 입력해주세요" />
                         </div>
                     </li>
@@ -131,26 +122,26 @@ export default function Signup() {
                             <input type="text" 
                                     name="phone"
                                     id="phone"
-                                    onChagne={handleChangeForm}
                                     ref={refs.phoneRef}
+                                    onChange={handleChangeForm}
                                     placeholder="휴대폰 번호 입력('-' 포함)" />
                         </div>
                     </li>
                     <li>
                         <label for=""><b>이메일 주소</b></label>
-                        <span ref={msgRefs.msgEmailnameRef} >이메일 주소를 입력해주세요</span>
+                        <span ref={msgRefs.msgEmailnameRef}>이메일 주소를 입력해주세요</span>
                         <div>
                             <input type="text" 
                                     name="emailname"
                                     id = "emailname"
-                                    onChagne={handleChangeForm}
                                     ref={refs.emailnameRef}
+                                    onChange={handleChangeForm}
                                     placeholder="이메일 주소" />
                             <span>@</span>       
                             <select name="emaildomain" 
-                                    id="emaildomain" 
+                                    id="emaildomain"
                                     ref={refs.emaildomainRef}
-                                    onChagne={handleChangeForm} >
+                                    onChange={handleChangeForm}  >
                                 <option value="default">선택</option>
                                 <option value="naver.com">naver.com</option>
                                 <option value="gmail.com">gmail.com</option>
@@ -167,5 +158,7 @@ export default function Signup() {
         </div>
     );
 }
+
+
 
 
