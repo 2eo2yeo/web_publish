@@ -11,6 +11,11 @@ export default function Login() {
         'pwdRef' : useRef(null)
     }
 
+    const msgRefs = {
+        'msgRef' : useRef(null)
+    }
+
+
     const [formData, setFormData] = useState({'id':'', 'pwd':''});
     
 
@@ -24,7 +29,7 @@ export default function Login() {
     const handleLoginSubmit = (event) => {
         event.preventDefault();
 
-        if(validateLogin(refs)) {
+        if(validateLogin(refs, msgRefs)) {
             console.log('send data -->', formData);
             
         }

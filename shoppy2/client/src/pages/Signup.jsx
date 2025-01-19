@@ -40,18 +40,18 @@ export default function Signup() {
                     {names && names.map((name) => (
                         <li>
                             <label for="" ><b>{lables[name]}</b></label>
-                            <span ref={msgRefs[name.concat('MsgRef')]}>{lables[name]}를 입력해주세요.</span>
+                            <span ref={msgRefs.current[name.concat('MsgRef')]}>{lables[name]}를 입력해주세요.</span>
                             <div>
                                 {(name === 'emailname') ? (
                                     <>
                                         <input type="text"
                                             name={name}
                                             onChange={handleChangeForm}
-                                            ref={refs[name.concat('Ref')]}
+                                            ref={refs.current[name.concat('Ref')]}
                                             placeholder={placeholders[name]} />
                                         <span>@</span>
                                         <select name="emaildomain"
-                                            ref={refs["emaildomainRef"]}
+                                            ref={refs.current["emaildomainRef"]}
                                             onChange={handleChangeForm} >
                                             <option value="default">선택</option>
                                             <option value="naver.com">naver.com</option>
@@ -66,7 +66,7 @@ export default function Signup() {
                                         <input type = {(name === 'pwd' || name === 'cpwd') ? "password" : "text" }
                                             name={name}
                                             onChagne={handleChangeForm}
-                                            ref={refs[name.concat('Ref')]}
+                                            ref={refs.current[name.concat('Ref')]}
                                             placeholder={placeholders[name]}/>
                                         
                                         {(name === 'id' &&
