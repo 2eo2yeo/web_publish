@@ -35,6 +35,13 @@ export const validateSignup = (refs, msgRefs) => {
         //메세지 초기화
         let msgItem, msgName, msgRef = null;
 
+        if(i < refEntries.length - 1 ) {
+            msgItem = msgRefEntries[i];
+            msgName = msgItem[0];
+            msgRef = msgItem[1];
+        }
+    
+
         if( name !== 'emaildomainRef'){
             if(ref.current.value === '' ) {
                 msgRef.current.style.setProperty('color','red');
