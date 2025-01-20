@@ -25,7 +25,11 @@ export const validateLogin = ({ idRef, pwdRef }, { msgRef }) => { //구조분해
 
 /************************
  * title : 회원가입 폼 체크
+<<<<<<< HEAD
  **************************/
+=======
+ */
+>>>>>>> 487fac65a3af5967fe0579a5ebec584a961edc0b
 export const validateSignup = (refs, msgRefs) => {
 
     // createRef는 넘어오는 값에 current가 붙어서 객체가 형성됨 
