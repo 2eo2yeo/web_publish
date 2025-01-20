@@ -40,8 +40,6 @@ export default function Signup() {
     }
 
 
-
-
     return (
         <div className="content">
             <h1 className="center-title">SIGN UP</h1>
