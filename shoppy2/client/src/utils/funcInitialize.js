@@ -30,12 +30,6 @@ export function initSignup () {
     return {names, placeholders, lables, initFormData }
 
 }
-
-<<<<<<< HEAD
-
-=======
-   
->>>>>>> 487fac65a3af5967fe0579a5ebec584a961edc0b
 /******************** 
     Signup 참조 객체 생성 
 *********************/
@@ -47,6 +41,8 @@ export function useInitSignupRefs(names) {
         return acc;
     }, {}))
 
+    refs.current.emaildomainRef = useRef(React.createRef());
+
     const msgRefs = useRef(
         names.reduce((acc, name) => {
         acc[name.concat('MsgRef')] = React.createRef();
@@ -54,9 +50,5 @@ export function useInitSignupRefs(names) {
     }, {}))
 
     return { refs, msgRefs }
-<<<<<<< HEAD
 }
 
-=======
-}
->>>>>>> 487fac65a3af5967fe0579a5ebec584a961edc0b

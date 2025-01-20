@@ -68,7 +68,7 @@ export function useInitSignupRefs(names) {
     );
 
     // namse배열에 emaildomain 요소가 없기에 별도 생성
-    refs.current.emaildomainRef = React.createRef();
+    refs.current.emaildomainRef = useRef(React.createRef());
 
 
     const msgRefs = useRef( //useRef로 감쌈, 리랜더링 방지
