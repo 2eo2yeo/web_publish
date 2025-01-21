@@ -12,11 +12,11 @@ class Student {
         this.nickName = nickName;
     }
 
+    /* 일반 메서드를 get처럼 사용하는 것, 이전 방식 */
     // getName = () => this.#name; 
     // getAge = () => this.#age; 
     // getAddress = () => this.#address; 
     // getNickname = () => this.nickName; 
-
     // setName = (name) => this.#name = name;
     // setAge = (age) => this.#age = age;
     // setAddress = (address) => this.#address = address;
