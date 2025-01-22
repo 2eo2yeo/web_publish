@@ -11,7 +11,9 @@ export default function DetailProduct({ addCart }) {
   const { pid } = useParams();
   const [product, setProduct] = useState({});
   const [size, setSize] = useState("XS");
-
+  
+  const [activeTab, setActiveTab] = useState("detail"); // detail page 상태관리
+  
   useEffect(() => {
     axios
       .get("/data/products.json") // http://localhost:3000/data/products.json
@@ -22,6 +24,7 @@ export default function DetailProduct({ addCart }) {
       })
       .catch((error) => console.log(error));
   }, []);
+
 
 
 
@@ -107,34 +110,44 @@ export default function DetailProduct({ addCart }) {
       <div className="product-detail-tab">
         <div className="tab_nav">
           <ul>
-            <li className="on">DETAIL</li>
-            <li>REVIEW</li>
-            <li>Q&A</li>
-            <li>Return & Delivery</li>
+            <li className={activeTab === "detail" ? "on" : ""}
+                onClick={()=>{setActiveTab("detail")}}>DETAIL</li>
+            <li className={activeTab === "review" ? "on" : ""}
+                onClick={()=>{setActiveTab("review")}}>REVIEW</li>
+            <li className={activeTab === "qna" ? "on" : ""}
+                onClick={()=>{setActiveTab("qna")}}>Q&A</li>
+            <li className={activeTab === "delivery" ? "on" : ""}
+                onClick={()=>{setActiveTab("delivery")}}>Return & Delivery</li>
           </ul>
         </div>
         {/* start cont */}
         <div className="tab_content_area">
+          {activeTab === "detail" && (
           <div className="box detail"
-          style={{'display':'none'}}
           >
             <DetailProductList />
           </div>
+          )}
+          {activeTab === "review" && (
           <div className="box review"
-            // style={{ 'display': 'none' }}
           >
             <Review />
           </div>
+
+          )}
+          {activeTab === "qna" && (
           <div className="box qna"
-            style={{ 'display': 'none' }}
           >
             <Qna />
           </div>
+          )}
+          {activeTab === "delivery" && (
           <div className="box delivery"
-            style={{ 'display': 'none' }}
           >
             <ReturnDelivery />
           </div>
+            
+          )}
         </div>
         {/* end cont */}
       </div>

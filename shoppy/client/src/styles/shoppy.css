@@ -296,10 +296,9 @@ p {
   /* justify-content: space-between; */
 }
 
-/********************************************/
-
-
-/********************************************/
+/*******************************************
+  Detail 예리언니 추가본
+******************************************/
 .product-detail-tab * {
   padding: 0;
   margin: 0;
@@ -335,16 +334,28 @@ p {
   border-bottom: none;
 }
 
+/*****************
+  개인 추가본
+*****************/
+
+@import "./qna.css";
+@import "./review.css";
+@import "./ProductDetail.css";
+
+
 /***********************************
   review & delivery
   작성자 : 정서령
 *********************************/
 
+
+
+
 .delivery {
   margin: 40px 0px 50px 0px;
 }
 
-  .delivery .deliveryreturn_delivery-main {
+.delivery .deliveryreturn_delivery-main {
   border: 1px solid red;
   padding: 30px;
 }
