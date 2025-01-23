@@ -260,7 +260,6 @@ p {
   /* font-weight: bold; */
   border: none;
   text-align: center;
-  padding: 10px;
   color: var(--color-white);
 }
 
@@ -289,119 +288,80 @@ p {
   width: 1200px;
   /* height: 200px; */
   /* display: flex; */
-  gap: 2rem;
   margin: auto;
   margin-top: 40px;
-  /* padding-left: 300px; */
-  /* justify-content: space-between; */
 }
 
-/*******************************************
-  Detail 예리언니 추가본
-******************************************/
-.product-detail-tab * {
-  padding: 0;
-  margin: 0;
-}
+/***********************************
+  product-detail-tabs
+***********************************/
 
-.product-detail-tab .tab_nav ul {
-  display: flex;
+.tabs {
+  /* border: 1px solid red; */
   width: 100%;
-  justify-content: center;
-  border-left: 1px solid #b5b5b5;
   border-bottom: 2px solid #000;
-  height: 62px;
+  list-style-type: none;
 }
 
-.product-detail-tab .tab_nav ul li {
-  width: 25%;
-  list-style: none;
+.tabs:afrer {
+  display: block;
+  clear: both;
+  content : "";
+}
+
+.tabs li {
+  height: 80px;
   border: 1px solid #b5b5b5;
   border-bottom: none;
   border-left-width: 0;
   background-color: #fff;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
+  float: left;
+  width: 25%;
+}
+
+
+.tabs li button {
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: #333;
+  font-size: 18px;
+  font-family: "나눔바른고딕";
+  outline: none;
+  border: none;
+  background-color: var(--color-white);
+}
+
+.tabs li button:hover {
   cursor: pointer;
 }
 
-.product-detail-tab .tab_nav ul li.on {
-  position: relative;
-  height: 62px;
-  z-index: 2;
+.tabs li.active {
   border: 2px solid #000;
   border-bottom: none;
+  height: 82px;
+  margin-bottom: -2px;
 }
 
-/*****************
-  개인 추가본
-*****************/
-
-@import "./qna.css";
-@import "./review.css";
-@import "./ProductDetail.css";
-
-
-/***********************************
-  review & delivery
-  작성자 : 정서령
-*********************************/
-
-
-
-
-.delivery {
-  margin: 40px 0px 50px 0px;
+.tabs li.active label {
+  color: #000;
 }
 
-.delivery .deliveryreturn_delivery-main {
-  border: 1px solid red;
-  padding: 30px;
+.tabs_contents {
+  margin-top: 50px;
 }
 
-.delivery .return_delivery-text {
-  margin: 30px 0px 30px 0px;
+/*******************
+  tabs - detail
+*******************/
 
-}
-
-.delivery .notice {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 150px;
+.detail-images {
+  /* border: 1px solid red; */
   text-align: center;
-  align-items: center;
-  background-color: #ffffff;
 }
 
-.delivery .aaa  {
-  border-bottom: 1px solid rgb(161, 161, 161); 
-}
-.delivery .aaa:first-child  {
-  border-top: 1px solid rgb(161, 161, 161); 
-}
-
-.delivery .notice>div:first-child {
-  background-color: #eeeeee;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
-
-
-.delivery .notice-text {
-  text-align: initial;
-  padding-left: 30px;
-  list-style-type: disc;
-}
-
-.delivery ul {
-  list-style-type: none;
-
-}
-
-.delivery .notice-text li {
-  font-size: 12px;
+.detail-images.holidays-notice {
+  margin-bottom: 80px;
 }

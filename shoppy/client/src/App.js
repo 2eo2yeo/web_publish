@@ -9,7 +9,6 @@ import Carts from './pages/Carts.jsx';
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 import DetailProduct from './pages/DetailProduct.jsx';
-import DetailProductPractice from './pages/DetailProductPractice.jsx';
 
 export default function App() {
 
@@ -37,7 +36,7 @@ export default function App() {
                     <Route path='/cart' element={<Carts cartList={cartList}/>} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
-                    <Route path='/products/:pid' element={<DetailProductPractice addCart={addCart} />} />
+                    <Route path='/products/:pid' element={<DetailProduct addCart={addCart} />} />
                     {/* 여기서 pid 값을 받을 수 있다 value이기때문에 이렇게 사용이 가능 */}
                     {/* path를 통해서 넘어오는 값은(pid)는 리액트가 관리한다.
                     여기까지만 작성하면 리액트가 알아서 해줌 -> useParams안에 pid가 들어있음 */}

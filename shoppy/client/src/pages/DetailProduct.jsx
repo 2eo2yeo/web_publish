@@ -2,22 +2,25 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { PiGiftThin } from "react-icons/pi";
 import axios from "axios";
-import ReturnDelivery from "../components/product/delivery/ReturnDelivery.jsx";
-import Review from "../components/product/review/Detail.jsx";
-import DetailProductList from "../components/product/productDetail/DetailProductList.jsx";
-import Qna from "../components/product/qna/Qna.jsx";
+import Detail from "../components/detail_tabs/Detail";
+import ImageList from "../components/ImageList";
 
 export default function DetailProduct({ addCart }) {
   const { pid } = useParams();
   const [product, setProduct] = useState({});
+  const [imgList, setImgList] = useState([]);
   const [size, setSize] = useState("XS");
+  const [tabName, setTabName] = useState("detail")
+  const tabLabels = ['DETAIL', 'REVIEW', 'Q&A', 'RETURN & DELIVERY'];
 
   useEffect(() => {
     axios
       .get("/data/products.json") // http://localhost:3000/data/products.json
       .then((res) => {
         res.data.filter((product) => {
-          if (product.pid === pid) setProduct(product);
+          if (product.pid === pid)
+            setProduct(product);
+            setImgList(product.imgList);
         });
       })
       .catch((error) => console.log(error));
@@ -39,22 +42,23 @@ export default function DetailProduct({ addCart }) {
     addCart(cartItem); // App.js의 addCart 함수 호출
   };
 
+
+  // 탭 변경 이벤트
+  // 조건이 있을 경우에 별도의 함수를 만들어서 사용하면 좋음 
+  // 그게 아닐 경우 출력하는 부분에서 바로 set함수 사용
+  // const handleChangeTabs = (text) => {
+  //   setTabName(text);
+  // }
+
+
   return (
     <div className="content">
       <div className="product-detail-top">
         <div className="product-detail-image-top">
           <img src={product.image} />
-          <ul className="product-detail-image-top-list">
-            <li>
-              <img src={product.image} alt="" />
-            </li>
-            <li>
-              <img src={product.image} alt="" />
-            </li>
-            <li>
-              <img src={product.image} alt="" />
-            </li>
-          </ul>
+          <ImageList className="product-detail-image-top-list"
+                  imgList = {imgList}/>   {/* json 데이터의 imgList */}
+
         </div>
 
         <ul className="product-detail-info-top">
@@ -102,41 +106,25 @@ export default function DetailProduct({ addCart }) {
           </li>
         </ul>
       </div>
-
       {/* DETAIL / REVIEW / Q&A / RETURN & DELIVERY  */}
       <div className="product-detail-tab">
-        <div className="tab_nav">
-          <ul>
-            <li className="on">DETAIL</li>
-            <li>REVIEW</li>
-            <li>Q&A</li>
-            <li>Return & Delivery</li>
-          </ul>
+        <ul className="tabs">
+          <li className={tabName === "detail" ? "active" : ''}>
+            <button type="button" onClick={() => setTabName("detail")}>DETAIL</button>
+          </li>
+          <li className={tabName === "review" ? "active" : ''}>
+            <button type="button" onClick={() => setTabName("review")}>REVIEW</button>
+          </li>
+          <li className={tabName === "qna" ? "active" : ''}>
+            <button type="button" onClick={() => setTabName("qna")}>Q&A</button>
+          </li>
+          <li className={tabName === "return" ? "active" : ''}>
+            <button type="button" onClick={() => setTabName("return")}>RETURN & DELIVERY</button>
+          </li>
+        </ul>
+        <div className="tabs_contents">
+          <Detail imgList={imgList} />
         </div>
-        {/* start cont */}
-        <div className="tab_content_area">
-          <div className="box detail"
-          style={{'display':'none'}}
-          >
-            <DetailProductList />
-          </div>
-          <div className="box review"
-            // style={{ 'display': 'none' }}
-          >
-            <Review />
-          </div>
-          <div className="box qna"
-            style={{ 'display': 'none' }}
-          >
-            <Qna />
-          </div>
-          <div className="box delivery"
-            style={{ 'display': 'none' }}
-          >
-            <ReturnDelivery />
-          </div>
-        </div>
-        {/* end cont */}
       </div>
     </div>
   );
