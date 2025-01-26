@@ -13,14 +13,16 @@ export default function DetailProduct({ addCart }) {
   const [tabName, setTabName] = useState("detail")
   const tabLabels = ['DETAIL', 'REVIEW', 'Q&A', 'RETURN & DELIVERY'];
 
+
   useEffect(() => {
     axios
       .get("/data/products.json") // http://localhost:3000/data/products.json
       .then((res) => {
         res.data.filter((product) => {
-          if (product.pid === pid)
+          if (product.pid === pid) {
             setProduct(product);
             setImgList(product.imgList);
+          }
         });
       })
       .catch((error) => console.log(error));
@@ -123,7 +125,8 @@ export default function DetailProduct({ addCart }) {
           </li>
         </ul>
         <div className="tabs_contents">
-          <Detail imgList={imgList} />
+          { tabName === "detail" && <Detail imgList={imgList} />}
+          { tabName === "review" && <Review />}
         </div>
       </div>
     </div>

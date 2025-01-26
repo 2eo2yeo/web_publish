@@ -1,16 +1,14 @@
 import React from 'react';
-import DetailImages from './DetailImages';
-import DetailInfo from './DetailInfo';
-import DetailInfoNotice from './DetailInfoNotice';
-
+import DetailImages from './DetailImages.jsx';
+import DetailInfo from './DetailInfo.jsx';
+import DetailInfoNotice from './DetailInfoNotice.jsx';
 
 export default function Detail({imgList}) {
     return (
         <div>
-            <DetailImages imgList={imgList} className="detail-images img" />
+            <DetailImages imgList={imgList} className="detail-images img"/>
             <DetailInfo />
             <DetailInfoNotice />
         </div>
     );
 }
-
