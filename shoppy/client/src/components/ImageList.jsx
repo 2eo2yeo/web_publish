@@ -1,19 +1,15 @@
 import React from 'react';
 import { FaPlus } from "react-icons/fa6";
 
-export default function ImageList({ imgList, className }) {
-
-    const name = className.substring(0, 6);
-    // className에서 index 0부터시작해서 6글자 받아옴
-
-    console.log('name==>> ', className.substring(0, 6));
-
- 
+export default function ImageList({imgList, className}) { 
+    // console.log('name==>> ', className.substring(0,6));
+    const name = className.substring(0,6);  //review 이미지 
+    
     return (
         <ul className={className}>
             {   name !== 'review' ?
                         imgList && imgList.map( image => 
-                                <li><img src={image} alt="" /></li>
+                                <li><img src={image} alt="" className={name=== 'detail'? 'detail-images-list img' : ''} /></li>
                             )
                     :  imgList && imgList.map((image, i) =>                             
                             <li className="review-top-img-metadata">

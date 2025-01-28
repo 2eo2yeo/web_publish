@@ -3,7 +3,9 @@ import { useParams } from "react-router-dom";
 import { PiGiftThin } from "react-icons/pi";
 import axios from "axios";
 import Detail from "../components/detail_tabs/Detail";
+import Review from "../components/detail_tabs/Review";
 import ImageList from "../components/ImageList";
+import StarRating from "../components/StarRating";
 
 export default function DetailProduct({ addCart }) {
   const { pid } = useParams();
@@ -12,6 +14,7 @@ export default function DetailProduct({ addCart }) {
   const [size, setSize] = useState("XS");
   const [tabName, setTabName] = useState("detail")
   const tabLabels = ['DETAIL', 'REVIEW', 'Q&A', 'RETURN & DELIVERY'];
+  const tabEventNames = ['detail', 'review', 'qna', 'return']
 
 
   useEffect(() => {
@@ -59,7 +62,7 @@ export default function DetailProduct({ addCart }) {
         <div className="product-detail-image-top">
           <img src={product.image} />
           <ImageList className="product-detail-image-top-list"
-                  imgList = {imgList}/>   {/* json 데이터의 imgList */}
+            imgList={imgList} />   {/* json 데이터의 imgList */}
 
         </div>
 
@@ -69,6 +72,9 @@ export default function DetailProduct({ addCart }) {
             product.price
           ).toLocaleString()}원`}</li>
           <li className="product-detail-subtitle">{product.info}</li>
+          <li lassName="product-detail-subtitle-star">
+            <StarRating totalRate={4.2} className="star-coral"/> <span>572개 리뷰 &nbsp;&nbsp; {">"}</span>
+          </li>
           <li>
             <p className="product-detail-box">신규회원, 무이자 할부 등</p>
           </li>
@@ -111,22 +117,18 @@ export default function DetailProduct({ addCart }) {
       {/* DETAIL / REVIEW / Q&A / RETURN & DELIVERY  */}
       <div className="product-detail-tab">
         <ul className="tabs">
-          <li className={tabName === "detail" ? "active" : ''}>
-            <button type="button" onClick={() => setTabName("detail")}>DETAIL</button>
-          </li>
-          <li className={tabName === "review" ? "active" : ''}>
-            <button type="button" onClick={() => setTabName("review")}>REVIEW</button>
-          </li>
-          <li className={tabName === "qna" ? "active" : ''}>
-            <button type="button" onClick={() => setTabName("qna")}>Q&A</button>
-          </li>
-          <li className={tabName === "return" ? "active" : ''}>
-            <button type="button" onClick={() => setTabName("return")}>RETURN & DELIVERY</button>
-          </li>
+          {
+            tabLabels.map((label, i) =>
+              <li className={tabName === tabEventNames[i] ? "active" : ''}>
+                <button type="button" onClick={(e) => setTabName(tabEventNames[i])}>{label}</button>
+              </li>
+            )
+          }
         </ul>
+        {/* tabname 상태에 따라 컴포넌트 호출 */}
         <div className="tabs_contents">
-          { tabName === "detail" && <Detail imgList={imgList} />}
-          { tabName === "review" && <Review />}
+          {tabName === "detail" && <Detail imgList={imgList} />}
+          {tabName === "review" && <Review />}
         </div>
       </div>
     </div>
