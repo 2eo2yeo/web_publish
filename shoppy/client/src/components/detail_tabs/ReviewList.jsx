@@ -1,5 +1,7 @@
 import React from 'react';
+import { FaRegCircleQuestion } from "react-icons/fa6";
 import StarRating from '../StarRating';
+import ReviewListItem from './ReviewListItem';
 
 export default function ReviewList() {
     return (
@@ -8,12 +10,24 @@ export default function ReviewList() {
                 <li><button type='button'>최신순</button></li>
                 <li><button type='button'>평점 높은순</button></li>
                 <li><button type='button'>평점 낮은순</button></li>
-                <li><button type='button'>추천순</button></li>
+                <li><button type='button'>추천순<FaRegCircleQuestion /></button></li>
             </ul>
             <table className="review-list-content">
                 <tbody>
                     <tr>
-                        <td className="review-list-star"></td>
+                        <td className="review-list-star"><StarRating totalRate={3.4} className="star-black-review"/></td>
+                        <td><ReviewListItem/> </td>
+                    </tr>
+                    <tr>
+                        <td className="review-list-star"><StarRating totalRate={3.4} className="star-black-review"/></td>
+                        <td><ReviewListItem/> </td>
+                    </tr>
+                    <tr>
+                        <td className="review-list-star"><StarRating totalRate={3.4} className="star-black-review"/></td>
+                        <td><ReviewListItem/> </td>
+                    </tr>
+                    <tr>
+                        <td colSpan={2}>{"<<   "} 1 2 3 4 5 6 7 8 9 10 {"   >>"}</td>
                     </tr>
                 </tbody>
             </table>
