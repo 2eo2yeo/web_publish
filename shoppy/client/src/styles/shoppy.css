@@ -484,9 +484,8 @@ button {
 
 /*** stat rating start ****/
 .star-rating {
-  /* border: 2px solid red; */
-  /* display: flex;
-  align-items: center; */
+  display: flex;
+  align-items: center;
   line-height: 20px;
 }
 .black {

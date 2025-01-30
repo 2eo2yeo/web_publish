@@ -72,7 +72,7 @@ export default function DetailProduct({ addCart }) {
             product.price
           ).toLocaleString()}원`}</li>
           <li className="product-detail-subtitle">{product.info}</li>
-          <li lassName="product-detail-subtitle-star">
+          <li className="product-detail-subtitle-star">
             <StarRating totalRate={4.2} className="star-coral"/> <span>572개 리뷰 &nbsp;&nbsp; {">"}</span>
           </li>
           <li>

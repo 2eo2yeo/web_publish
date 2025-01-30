@@ -12,9 +12,18 @@ export default function StarRating({ totalRate, className }) {
     const emptyStars = 5 - fillStars - (halfStar ? 1 : 0)  //빈별 갯수
 
 
+    console.log("fillStars:", fillStars);
+    console.log("halfStar:", halfStar);
+    console.log("emptyStars:", emptyStars);
+
+
 
     return (
         <div className="star-rating">
+
+{/*
+               {/** totalRate 값에 소수도 포함된 경우 : 반별 출력 ⭕ */}
+
             {/* 채워진 별 : ⭐ */}
             {[...Array(fillStars)].map((_, i) => (
                 <span key={i} className={className.concat(" ", color)}>
@@ -39,18 +48,21 @@ export default function StarRating({ totalRate, className }) {
 
             {className === "star-black-big" &&
                 <>
-                    <span className={className.concat("number")}>{totalRate}</span>
-                    <span className={className.concat("tot-number")}>{totalRate}</span>
+                    <span className={className.concat(" number")}>{totalRate}</span>
+                    <span className={className.concat(" tot-number")}>{totalRate}</span>
                 </>
             }
             {className === "star-coral" &&
                 <>
-                    <span className={className.concat("number")}>{totalRate}</span>
+                    <span className={className.concat(" number")}>{totalRate}</span>
                 </>
 
             }
 
         </div>
+
+            
+
     );
 }
 
